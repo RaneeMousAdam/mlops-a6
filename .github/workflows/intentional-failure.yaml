@@ -2,6 +2,9 @@ name: Intentional Failure Workflow
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - "**"
 
 jobs:
   fail_job:
