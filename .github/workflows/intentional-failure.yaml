@@ -1,0 +1,17 @@
+name: Intentional Failure Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fail_job:
+    name: Intentional Failure
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Intentional fail
+        run: |
+          echo "This job is intentionally failing for test purposes"
+          exit 1
